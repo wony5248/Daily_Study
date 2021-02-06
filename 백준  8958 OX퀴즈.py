@@ -1,17 +1,16 @@
-from collections import deque
+
 TC = int(input())
+result = [0 for _ in range(TC)]
+lst = []
 
 for i in range(TC):
     count = 0
-    queue = deque()
-    result = deque()
-    string = input()
-    for j in range(len(string)):
-        queue.append(string[j])
-    while queue:
-        if queue.popleft() == "O":
-            result.append("O")
-        elif queue.popleft() == "X":
-            for k in range(1, len(result)+1):
-                count += k
-    print(count)
+    lst.append(list(input()))
+    for j in range(len(lst[i])):
+        if lst[i][j] == "O":
+            count += 1
+            result[i] += count
+        elif lst[i][j] == "X":
+            count = 0
+for i in range(TC):
+    print(result[i])
