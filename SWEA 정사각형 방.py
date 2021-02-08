@@ -18,14 +18,14 @@ def bfs(x, y):
             if 0 <= nx < N and 0 <= ny < N and room[nx][ny] == room[cx][cy] + 1:
                 count += 1
                 queue.append([nx, ny])
-    result[start] = count
+    cntlst.append(count)
 
 
 
 for i in range(1, TC+1):
     N = int(input())
     room = [[0 for _ in range(N)] for _ in range(N)]
-    result = [0]*(N**2+1)
+    result = []
     cntlst = []
     final = []
     for j in range(N):
@@ -34,9 +34,9 @@ for i in range(1, TC+1):
     for j in range(N):
         for k in range(N):
             if room[j][k] >= 1:
-                start = room[j][k]
+                result.append(room[j][k])
                 bfs(j, k)
     for j in range(len(cntlst)):
         if cntlst[j] == max(cntlst):
             final.append(result[j])
-    print("#%d %d %d" %(i, result.index(max(result)), max(result)))
+    print("#%d %s %d" %(i, final, max(cntlst)))
