@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = "BTSMINBTSMINBTSKKOPSM";
+        let target = ["SM", "MIN", "OP", "VO", "TSM"];
+
+        function getCount(element){
+            let b = -1;
+            let count = 0
+            while(1)
+            {
+                b = a.indexOf(element, a+1);
+                if (a===-1)
+                {
+                    break
+                }
+                count++
+            }
+            return count
+        }
+        let max = 0
+        let maxStr =""
+        for (let i = 0; i< target.length; i++)
+        {
+            let count = getCount(target[i]);
+            if(count > max)
+            {
+                max = count;
+                maxStr = target[i]
+            }
+        }
+        console.log(maxStr)
+    </script>
+</body>
+</html>

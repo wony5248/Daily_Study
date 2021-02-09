@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        class Person{
+            constructor(name, hp){
+                this.name = name
+                this.hp = hp
+            }
+            hello(){
+                console.log(`name = ${this.name}`)
+            }
+        }
+        class Avengers extends Person{
+            constructor(power,hp,name, skill) {
+                super(name, hp)
+                this.power = power
+                this.skill = skill
+            }
+            information() {
+                console.log(`name: ${this.name}`)
+                console.log(`skill: ${this.skill}`)
+                console.log(`power: ${this.power}`)
+                console.log(`hp: ${this.hp}`)
+            }
+            fly() {
+                console.log(`${this.name} 은/는 비행중 입니다.`)
+
+            }
+        }
+        const hero1 = new Avengers(5000, 700, "Ironman", "I am Ironman");
+        const hero2 = new Avengers(9999, 1000, "Thanos", "Finger snap");
+        hero1.hello()
+        hero1.information()
+        hero1.fly()
+        hero2.hello()
+        hero2.information()
+        hero2.fly()
+    </script>
+</body>
+
+</html>

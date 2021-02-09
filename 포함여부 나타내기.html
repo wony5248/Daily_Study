@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .number-container{
+            display:flex;
+            flex-direction: column;
+            width:20%;
+        }
+        .number-container > *{
+            margin:12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="number-container">
+        배열 <input type="text" id="array-input"/>
+        포함 되었는지 확인할 값 <input type="text" id="value-input">
+        <button class="result-button">결과</button>
+    </div>
+    <div class="result"></div>
+
+    <script>
+        (function () {    
+            const valueInput = document.querySelector("#value-input");    
+            const arrayInput = document.querySelector("#array-input");    
+            const resultButton = document.querySelector(".result-button");    
+            const result = document.querySelector(".result");    
+
+            resultButton.addEventListener("click", function(){
+                console.log(arrayInput.value);
+                console.log(valueInput.value);
+                const array = arrayInput.value.split(",");
+                const isImported = array.some(element => element === valueInput.value)
+                if (isImported === true)
+                {
+                    result.textContent = "포함"
+                }
+                else{
+                    result.textContent = "미포함"
+                }
+            })
+        })();
+    </script>
+</body>
+</html>
