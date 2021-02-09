@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <script>
+        const bucketlist = [
+            { id: 3, text: "여행 가기", done: false },
+            { id: 2, text: "치킨 먹기", done: true },
+            { id: 1, text: "코딩 하기", done: false }
+        ]
+
+    
+        //1번째 push
+        // function addList1(list) {
+        //     bucketlist.push(list)
+        // }
+
+        //2 원본 배열 안건드림
+        // function addList2(list) {
+        //     return [list, ...bucketlist]
+        // }
+
+        //3 concat이용
+        function addList3(list) {
+            return [list].concat(bucketlist)
+        }
+
+        const getValues = (key) => bucketlist.map(bucketlist => bucketlist[key])
+        
+        addList3({ id: 4, content: "요리하기", copleted: true })
+        // console.log(bucketlist);
+        console.log(addList3({ id: 4, content: "요리하기", copleted: true }))
+
+    </script>
+</body>
+
+</html>

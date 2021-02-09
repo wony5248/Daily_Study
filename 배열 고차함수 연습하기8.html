@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+   
+    <script>
+        const bucketlist1 = [
+            { id: 3, text: "여행 가기", done: false },
+            { id: 2, text: "치킨 먹기", done: true },
+            { id: 1, text: "코딩 하기", done: false }
+        ]
+
+        // map
+        // cnt = 0
+        // function count() {
+        //     bucketlist1.map(li => {
+        //         if(li.done)
+        //         {
+        //             cnt ++
+        //         }
+                
+        //     })
+        //     return cnt
+        // }
+
+
+        //filter
+        function count(){
+            return bucketlist1.filter(li => li.done).length
+        }
+        console.log(count())
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+
+    <script>
+        const bucketlist = [
+            { id: 3, text: "여행 가기", done: false },
+            { id: 2, text: "치킨 먹기", done: true },
+            { id: 1, text: "코딩 하기", done: false }
+        ]
+
+    
+        //toggle
+        function toggle(id) {
+            bucketlist.map(li => {
+                if (li.id === id)
+                {
+                    li.done = !li.done
+                }
+                return li;
+            })
+        }
+
+        //spread toggle
+        function toggle2(id) {
+            bucketlist.map(bucketlist=> {
+                if (bucketlist.id === id){
+                    return {...bucketlist, done: !bucketlist.done}
+                }
+            })
+        }
+
+        //모두 true 만들기
+        function allTrue() {
+            bucketlist.map(li => {
+                li.done = true
+                return li;
+            })
+        }
+        // reduce 사용 alltrue
+        function allTrue2() {
+            return bucketlist.reduce((acc, cur) => {
+                cur.done = true;
+                acc.push(cur)
+                return acc
+            }, [])
+        }
+        allTrue2()
+        console.log(bucketlist)
+
+
+    </script>
+</body>
+
+</html>

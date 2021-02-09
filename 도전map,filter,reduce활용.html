@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const orderList =[
+            {
+                menu:"치킨",
+                price:17000,
+                event: false,
+                count: 50
+            },
+            {
+                menu:"돈까스",
+                price:8500,
+                event: true,
+                count: 99
+            },
+            {
+                menu:"마라탕",
+                price:8000,
+                event: false,
+                count: 100
+            },
+            {
+                menu:"쫄면",
+                price:6500,
+                event: false,
+                count: 0
+            },
+            {
+                menu:"짜장면",
+                price:5500,
+                event: true,
+                count: 30
+            }
+        ]
+        const orderList2 =[
+            {
+                menu:"치킨",
+                price:17000,
+                event: false,
+                count: 50
+            },
+            {
+                menu:"돈까스",
+                price:8500,
+                event: true,
+                count: 99
+            },
+            {
+                menu:"마라탕",
+                price:8000,
+                event: false,
+                count: 100
+            },
+            {
+                menu:"쫄면",
+                price:6500,
+                event: false,
+                count: 0
+            },
+            {
+                menu:"짜장면",
+                price:5500,
+                event: true,
+                count: 30
+            }
+        ]
+         // reduce
+         const result1 = orderList2.reduce((acc, cur) =>{
+            if (cur.count)
+            {
+                if (cur.event)
+                {
+                    cur.price = cur.price * 0.9
+                    acc.push(cur)
+                }
+                else
+                {
+                    acc.push(cur)
+                }
+            }
+            return acc
+        }, [])
+        //map, filter
+        const result = orderList.filter(li => li.count).map(li =>{
+            if (li.event)
+            {
+                li.price = li.price * 0.9
+            }
+            else
+            {
+                li.price 
+            }
+            return li
+        })
+
+       
+    </script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //순수 함수
+        //동일한 인자가 들어간 경우 항상 같은 값이 나온다.
+        //return 으로만 데이터를 받아온다.
+        const increment = (input) => input + 1
+        const decrement = (input) => input - 1
+        const squared = (input) => input * input
+        const half = (input)=>input/2;
+        const initValue = 1;
+        const pipeline= [increment,decrement,increment,increment,decrement,squared,squared,half]
+        const result = pipeline.reduce((acc, cur) => cur(acc), initValue)
+        
+    </script>
+</body>
+</html>

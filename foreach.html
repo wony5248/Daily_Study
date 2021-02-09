@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1, 2, 3, 4, 5]
+        const arr5 = ["a" , "bcd","ef", "g"]
+        const arr2 = [{name:"A",count:1, type:"test"},{name:"B", count:2, type:"test"}]
+        arr2.map(li => li.name + "B")
+
+        arr2.map(li => {
+            return {name: li.name +"B",count: li.count}
+        })
+
+        arr2.map(li => {
+            console.log(li);
+            return {...li, name: li.name + "B"}
+        })
+        arr.forEach(li => {
+            if (li === 4){
+                return li;
+            }
+        })
+        const arr3 = arr.map(li => li*li)
+        const arr4 = arr5.map(li => li.length)
+        // forEach는 중단이 되지 않는다. some,every,find,findIndex는 중단이 가능
+
+        
+    </script>
+</body>
+</html>
