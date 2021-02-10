@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function wakeUp() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("일어나기")
+                }, 1000);
+            })
+        }
+
+        function eatMeal() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("밥 먹기")
+                }, 1000);
+            })
+        }
+
+        function drinkCoffee() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("커피 마시기")
+                }, 1000);
+            })
+        }
+
+        function sleep() {
+            return new Promise((resolve, reject) => {
+                setTimeout(() => {
+                    resolve("잠 자기")
+                }, 1000);
+            })
+        }
+
+        wakeUp().then((data) => {
+            console.log(data)
+            eatMeal().then((data) => {
+                console.log(data)
+                drinkCoffee().then((data) => {
+                    console.log(data)
+                    sleep().then((data) => {
+                        console.log(data)
+
+                    })
+
+                })
+
+            })
+        }).catch(() => {
+            console.log("더 자기")
+        })
+    </script>
+</body>
+
+</html>
