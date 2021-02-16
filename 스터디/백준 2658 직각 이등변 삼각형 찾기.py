@@ -32,6 +32,7 @@ if graph[firstx][firsty+1] == 1:    # 첫 꼭지점 에서 오른쪽으로 이�
         istri = 1
     elif stack[0][0] == thirdx and stack[1][1] - stack[0][1] == thirdy - stack[1][1] and stack[1][1] - stack[0][1] == stack[1][0] - stack[0][0]:
         istri = 1
+
 elif graph[lastx][lasty-1] == 1:   # 마지막 꼭지점에서 왼쪽으로 이동 가능한 경우
     # print("here2")
     while graph[lastx][lasty-1]:
