@@ -7,7 +7,7 @@ module.exports = {
        firstName: "jang",
        lastName: "beomjin",
        email: "wony5248@gmail.com",
-       password: "qjawls0501",
+       password: 1234,
        createdAt: new Date(),
        updatedAt: new Date(),
      }
@@ -15,8 +15,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInt
+    await queryInterface.bulkDelete("users", [])
+  }
+};
