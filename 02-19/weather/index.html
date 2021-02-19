@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    />
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"
+    ></script>
+    <script defer src="./index.js"></script>
+
+    <style>
+      body {
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+      .main-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        color: white;
+      }
+      .timer {
+        font-weight: 500;
+        font-size: 168px;
+        line-height: 168px;
+      }
+      .timer-content {
+        font-weight: bold;
+        font-size: 40px;
+        text-align: center;
+      }
+      .memo-wrapper {
+        font-size: 24px;
+        font-weight: bold;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+      }
+      .memo {
+        font-size: 30px;
+      }
+      .memo-input {
+        min-width: 200px;
+        text-align: center;
+      }
+      .modal-button {
+        position: fixed;
+        right: 40px;
+        top: 40px;
+        width: 100px;
+        height: 100px;
+        background-size: cover;
+        cursor: pointer;
+      }
+     
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- 타이머+인사 -->
+      <div class="timer-wrapper">
+        <div class="timer"></div>
+        <div class="timer-content"></div>
+      </div>
+
+      <!-- 메모작성 -->
+      <div class="m-3">
+        <input
+          type="text"
+          class="memo-input form-control"
+          placeholder="오늘 할일을 입력하세요"
+        />
+      </div>
+      <!-- 메모 표시 -->
+      <div class="memo-wrapper">
+        <div class="memo-title">TODAY</div>
+        <div class="memo"></div>
+      </div>
+      <!-- 모달 -->
+
+      <!-- Button trigger modal -->
+      <div
+        class="modal-button"
+        data-bs-toggle="modal"
+        style=""
+        data-bs-target="#exampleModal"
+      ></div>
+      
+      <!-- Modal -->
+      <div
+        class="modal"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog modal-xl">
+          <div class="modal-content bg-transparent">
+            <div class="modal-header border-0">
+              <h5 class="modal-title" id="exampleModalLabel">날씨</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body d-flex">
+
+
+
+
+            </div>
+            <div class="modal-footer border-0"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
