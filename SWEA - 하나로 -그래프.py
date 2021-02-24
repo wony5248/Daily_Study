@@ -11,7 +11,7 @@ for i in range(T):
     INF = float("inf")
     weight = [INF for _ in range(N)]
     distance = [[0 for _ in range(N)] for _ in range(N)]
-    visit = [0 for _ in range(N)]
+    tree = [0 for _ in range(N)]    # 트리가 되었는지 아닌지
 
     for j in range(N):
         for k in range(N):
@@ -21,19 +21,19 @@ for i in range(T):
 
     weight[0] = 0
     while count < N:                 # MST가 아닐 조건 - 최소 간선은 정점 -1
-        minV = INF                      
+        minV = INF
         u = -1
         for j in range(N):
-            if visit[j] == 0 and weight[j] < minV:
+            if tree[j] == 0 and weight[j] < minV:
                 minV = weight[j]
                 u = j
 
-        visit[u] = 1
+        tree[u] = 1
         result += minV
         count +=1
 
         for w in range(N):
-            if distance[u][w] > 0 and visit[w] == 0 and weight[w] > distance[u][w]:
+            if distance[u][w] > 0 and tree[w] == 0 and weight[w] > distance[u][w]:
                 weight[w] = distance[u][w]
 
 

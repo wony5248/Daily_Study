@@ -29,3 +29,4 @@ for i in range(T):
     bfs(0, 0)
     print("#%d %d" %(i+1, distance[size-1][size-1]))
 
+print(graph)
