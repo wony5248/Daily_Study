@@ -17,7 +17,7 @@ def solution(people, limit):
             answer += 1
 
     return answer
-
+### pop이 시간 잡아먹음  list로도 풀 수 있음
 
 
 
