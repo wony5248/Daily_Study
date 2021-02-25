@@ -3,7 +3,7 @@ N, M, V = map(int, input().split())
 graph = [[0 for _ in range(N+1)] for _ in range(N+1)]
 visit = [0 for _ in range(N+1)]
 visit1 = [0 for _ in range(N+1)]
-def dfs(start):
+def dfs(start):           # 처음 노드에 연결된 첫노드 탐색 -> 그 노드에 연결된 첫 노드 탐색 ...->
     print(start, end=" ")    #탐색한 값 출력
     visit[start] = 1
     for i in range(N+1):     #
@@ -12,7 +12,7 @@ def dfs(start):
 
 
 
-def bfs(start):
+def bfs(start):                      # 처음 탐색 한 노드에서 탐색할수 있는 친구 다 queue에 넣음 -> 탐색 -> 첫 노드에 연결된 애들 먼저 탐색
     queue = deque()
     queue.append(start)
     visit1[start] = 1
