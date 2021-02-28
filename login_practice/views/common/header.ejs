@@ -1,0 +1,14 @@
+<nav class="navbar navbar-light navbar-brand" style="background-color: #e3f2fd;">
+  <div class="container-fluid">
+    <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarSupportedContent">
+      <a class="nav-link text-dark" aria-current="page" href="/">Home</a>
+      <% if(locals.user){ %>
+      <a class="nav-link"> <%= locals.user.name %> 님 환영합니다! </a>
+      <a class="nav-link text-dark" href="/logout">Logout</a>
+      <% } else{ %>
+      <a class="nav-link text-dark" href="/login">Sign In</a>
+      <a class="nav-link text-dark" href="/signup">Sign Up</a>
+      <% } %>
+    </div>
+  </div>
+</nav>
