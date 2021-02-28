@@ -1,10 +1,11 @@
 import heapq
+import sys
 
 
-N = int(input())
+N = int(sys.stdin.readline())          # input에서 시간초과  -> 바꾸고 통과
 heap = []
 for j in range(N):
-     x = int(input())
+     x = int(sys.stdin.readline())
      if x == 0:
          if not heap:
              print(0)
