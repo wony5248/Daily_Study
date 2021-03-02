@@ -16,7 +16,24 @@
 # 
 #     return answer
 
-
 def solution(number, k):
-    answer = ''
+    stack = []
+    count = 0
+    for i in range(len(number)):
+        if not stack:
+            stack.append(number[i])
+        else:
+            while stack:
+                if count == k or number[i] <= stack[-1]:
+                    break
+                if number[i] > stack[-1]:
+                    stack.pop()
+                    count += 1
+            stack.append(number[i])
+    while count != k:
+        stack.pop()
+        count += 1
+    answer = "".join(stack)
+
     return answer
+
