@@ -1,8 +1,6 @@
 T = int(input())
 
 def solve(idx, tmp):
-    global maxV
-    global minV
     global result
     if idx == N - 1:
         result.append(tmp)
