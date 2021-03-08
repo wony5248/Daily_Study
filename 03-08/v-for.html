@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- <ol>
+          <li v-for="todo in todos">
+              {{todo.text}}
+          </li>
+      </ol> -->
+      <ul>
+          <li v-for="bucket in bucketList" v-if="bucket.done">
+              <h1>{{bucket.text}}</h1>
+              <!-- {{bucket.id}} -->
+          </li>
+      </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+      const app = new Vue({
+        el: "#app",
+        data: {
+          todos: [
+              {text: "자바스크립트 배우기"},
+              {text: "Vue 배우기"},
+              {text: "곧 1시 30분 입니다."}
+          ],
+          bucketList: [
+            {id: 1, text: "치킨 먹기", done: true},
+            {id: 2, text: "삼겹살 먹기", done: false},
+            {id: 3, text: "코로나 종식", done: false},
+            {id: 4, text: "집에 가기", done: false},
+            {id: 5, text: "눕기", done: true}
+          ]
+            
+        },
+        methods:{
+
+        }
+      });
+    </script>
+  </body>
+</html>
