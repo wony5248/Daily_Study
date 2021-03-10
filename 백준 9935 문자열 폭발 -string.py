@@ -1,18 +1,19 @@
 import sys
-string = list(sys.stdin.readline().rstrip())
-bomb = list(sys.stdin.readline().rstrip())
-# print(string)
-# print(bomb)
+string = sys.stdin.readline().rstrip()
+bomb = sys.stdin.readline().rstrip()
 
-for i in range(len(bomb)):
-    result = ""
-    for j in range(len(string)):
-        if bomb[i] == string[j]:
-            continue
-        else:
-            result += string[j]
-    string = result
-if not result:
-    print("FRULA")
-else:
+
+result = ""
+while True:
+    if bomb not in string:
+        break
+    else:
+        result = string[:string.find(bomb)] + string[string.find(bomb) + len(bomb):]
+        string = result
+
+if result:
     print(result)
+else:
+    print("FRULA")
+
+
