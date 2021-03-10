@@ -24,8 +24,6 @@ def bfs(x, y):                    # 0,0 부터 bfs 탐색 시작
                 visit[nx][ny] = 1              # 방문 표시
                 result[nx][ny] = result[cx][cy] + 1   # 다음 지점까지의 칸수 = 현재까지의 칸수 + 1
 
-
-
 bfs(0, 0)
 print(result[N-1][M-1])
 
