@@ -199,7 +199,7 @@ router.post("/", verifyToken, upload.array("room_image"), async (req, res) => {
         transaction.commit();
 
         return res.json({
-            stauts: "OK"
+            status: "OK"
         });
     } catch (error) {
         console.log(error);
