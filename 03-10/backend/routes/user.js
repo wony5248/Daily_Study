@@ -140,16 +140,24 @@ router.get("/", async (req, res) => {
 })
 
 //회원 하나의 정보 get
-router.get("/:id", async (req, res) => {
+router.get("/:id",async (req, res) => {
     try {
-        return res.json({
-            hello: "world"
-        })
+        const userInformation = await db["user"].findOne({
+            attributes:["id", "name", "email"],
+            where: {
+                id: req.params.id
+            }
+            
+        });
+        // console.log(roomImage);
+        console.log(userInformation)
+        return res.json(userInformation);
+        
     } catch (error) {
-        console.log(error)
+        console.log(error);
         return res.json({
-            hello: "error"
-        })
+            hello: "Error"
+        });
     }
 })
 

@@ -21,6 +21,13 @@ export const userAPI = {
             email,
             password
         })
+    },
+    profile: (info) => {
+      return request.get("/user/:id", {
+        params:{
+          info:info
+        },
+      })
     }
 }
 export const roomAPI = {

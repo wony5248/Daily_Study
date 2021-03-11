@@ -4,10 +4,16 @@ import VueRouter from 'vue-router'
 import Main from "../views/Main.vue"
 import Post from "../views/Post.vue"
 import Room from "../views/Room.vue"
+import Profile from "../views/Profile.vue"
 
 Vue.use(VueRouter)
 
 const routes = [
+  {
+    path: '/profile',
+    name:'Profile',
+    component: Profile
+  },
   {
     path: '/',
     name:'Main',

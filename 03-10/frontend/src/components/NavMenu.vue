@@ -16,8 +16,8 @@
 
     <!-- 로그인 후  -->
     <el-submenu v-if="user.id" index="3" class="login-menu">
-      <template slot="title">{{user.name}}님 환영합니다</template>
-      <el-menu-item index="3-1">내 프로필</el-menu-item>
+      <template slot="title">{{user.name}} 님 환영합니다</template>
+      <el-menu-item index="3-1" @click="$router.push(`/profile`)">내 프로필</el-menu-item>
       <el-menu-item index="3-2">내가 올린 방 </el-menu-item>
       <el-menu-item index="3-2" @click="SET_LOGOUT()">로그아웃</el-menu-item>
     </el-submenu>
@@ -63,6 +63,7 @@ export default {
     test() {
       console.log("hello");
     },
+  
   },
 };
 </script>
