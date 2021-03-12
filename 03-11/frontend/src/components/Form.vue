@@ -91,23 +91,6 @@
           <el-radio label="f">녀</el-radio>
         </el-radio-group>
       </el-form-item>
-
-      <el-form-item label="나이대">
-        <el-radio-group v-model="form.ages">
-          <el-radio label="all">모두</el-radio>
-          <el-radio label="1">0~12</el-radio>
-          <el-radio label="2">13~18</el-radio>
-          <el-radio label="3">19~24</el-radio>
-          <el-radio label="4">25~29</el-radio>
-          <el-radio label="5">30~34</el-radio>
-          <el-radio label="6">35~39</el-radio>
-          <el-radio label="7">40~44</el-radio>
-          <el-radio label="8">45~49</el-radio>
-          <el-radio label="9">50~54</el-radio>
-          <el-radio label="10">55~59</el-radio>
-          <el-radio label="11">60~</el-radio>
-        </el-radio-group>
-      </el-form-item>
     </div>
 
     <el-form-item>
@@ -142,7 +125,6 @@ export default {
         device: "all",
         // m 남성 f 여성
         gender: "all",
-        ages: "all"
       },
       // 배열로 관리할 데이터 두가지 keywords array
       // keywordGroups array
@@ -151,7 +133,7 @@ export default {
     };
   },
   methods: {
-    ...mapActions(["generateChartData"]),
+    ...mapActions["generateChartData"],
     // 키워드 생성하기
     saveKeyword() {
       console.log("test");
@@ -186,9 +168,8 @@ export default {
       console.log(this.form.timeUnit);
       console.log(this.form.device);
       console.log(this.form.gender);
-      console.log(this.form.ages);
       // console.log(this.form.ages);
-      const { startDate, endDate, timeUnit, device, gender, ages } = this.form;
+      const { startDate, endDate, timeUnit, device, gender } = this.form;
       console.dir(startDate);
       if (
         this.keywordGroups.length &&
@@ -196,8 +177,7 @@ export default {
         endDate &&
         timeUnit &&
         device &&
-        gender &&
-        ages
+        gender
       ) {
         const data = {
           keywordGroups: this.keywordGroups,
@@ -206,7 +186,6 @@ export default {
           timeUnit,
           device,
           gender,
-          ages,
         };
         const result = await dataLap.post(data);
         console.log(result);

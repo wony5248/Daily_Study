@@ -32,8 +32,7 @@ app.post("/api/data", async (req, res) => {
             timeUnit,
             device,
             gender,
-            keywordGroups,
-            ages
+            keywordGroups
         } = req.body
         const request_body = {
             startDate: startDate,
@@ -42,7 +41,7 @@ app.post("/api/data", async (req, res) => {
             keywordGroups: keywordGroups,
             device: device === "all" ? "" : device,
             gender: gender === "all" ? "" : gender,
-            ages: ages === "all" ? "" : []
+
         }
         // const request_body = {
         //     "startDate": "2017-01-01",
@@ -87,10 +86,9 @@ app.post("/api/data", async (req, res) => {
             console.log(error)
             if (error) throw error
         })
-        // return res.json({
-        //     status: "OK"
-        // })
-        return res.json(result.data)
+        return res.json({
+            status: "OK"
+        })
     } catch (error) {
         console.log(error)
         return res.json(error)
