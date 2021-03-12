@@ -23,6 +23,7 @@ export const userAPI = {
         })
     },
     profile: (info) => {
+      console.log("profile")
       return request.get("/user/:id", {
         params:{
           info:info

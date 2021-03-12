@@ -141,6 +141,7 @@ router.get("/", async (req, res) => {
 
 //회원 하나의 정보 get
 router.get("/:id",async (req, res) => {
+    console.log("test", req.body)
     try {
         const userInformation = await db["user"].findOne({
             attributes:["id", "name", "email"],
@@ -150,7 +151,7 @@ router.get("/:id",async (req, res) => {
             
         });
         // console.log(roomImage);
-        console.log(userInformation)
+        // console.log(userInformation)
         return res.json(userInformation);
         
     } catch (error) {
