@@ -20,6 +20,7 @@ def solve(sx, sy):
             ny = sy + dir[4][1]
             if 0 <= nx < N and 0 <= ny < M:      # 좌표 안에 있다면 주사위 굴려줌
                 dice[0], dice[1], dice[4], dice[5] = dice[4], dice[0], dice[5], dice[1]   #주사위를 남쪽 이동했을때의 모습으로 바꿔줌
+                # dice[0]은 바닥    dice[5]는 윗면
                 if guide[nx][ny] == 0:        # 바닥이 0 이면
                     guide[nx][ny] = dice[0]   # 주사위 숫자 바닥에 넣어줌
                 else:                         # 바닥이 0이 아닐 시
@@ -41,7 +42,7 @@ def solve(sx, sy):
                 sx = nx
                 sy = ny
                 print(dice[5])
-        elif command[i] == 2:
+        elif command[i] == 2: # 서쪽 이동
             nx = sx + dir[2][0]
             ny = sy + dir[2][1]
             if 0 <= nx < N and 0 <= ny < M:
@@ -54,7 +55,7 @@ def solve(sx, sy):
                 sx = nx
                 sy = ny
                 print(dice[5])
-        elif command[i] == 1:
+        elif command[i] == 1: # 동쪽 이동
             nx = sx + dir[1][0]
             ny = sy + dir[1][1]
             if 0 <= nx < N and 0 <= ny < M:
