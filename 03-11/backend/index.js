@@ -32,8 +32,12 @@ app.post("/api/data", async (req, res) => {
             timeUnit,
             device,
             gender,
-            keywordGroups
+            keywordGroups,
+            ages
         } = req.body
+        
+       
+        // console.log("age",ages)
         const request_body = {
             startDate: startDate,
             endDate: endDate,
@@ -41,7 +45,7 @@ app.post("/api/data", async (req, res) => {
             keywordGroups: keywordGroups,
             device: device === "all" ? "" : device,
             gender: gender === "all" ? "" : gender,
-
+            ages: ages === "all" ? "" : ages
         }
         // const request_body = {
         //     "startDate": "2017-01-01",
@@ -81,7 +85,7 @@ app.post("/api/data", async (req, res) => {
         const result = await axios.post(url, request_body, {
             headers
         })
-        console.log(result)
+        // console.log(result)
         fs.writeFile('./uploads/chart.json', JSON.stringify(result.data["results"]), function (error) {
             console.log(error)
             if (error) throw error

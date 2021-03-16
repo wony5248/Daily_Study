@@ -91,6 +91,20 @@
           <el-radio label="f">녀</el-radio>
         </el-radio-group>
       </el-form-item>
+
+      <el-checkbox-group v-model="form.ages">
+          <el-checkbox label="1" name="type">0∼12세</el-checkbox>
+          <el-checkbox label="2" name="type">13∼18세</el-checkbox>
+          <el-checkbox label="3" name="type">19∼24세</el-checkbox>
+          <el-checkbox label="4" name="type">25∼29세</el-checkbox>
+          <el-checkbox label="5" name="type">30∼34세</el-checkbox>
+          <el-checkbox label="6" name="type">35∼39세</el-checkbox>
+          <el-checkbox label="7" name="type">40∼44세</el-checkbox>
+          <el-checkbox label="8" name="type">45∼49세</el-checkbox>
+          <el-checkbox label="9" name="type">50∼54세</el-checkbox>
+          <el-checkbox label="10" name="type">55∼59세</el-checkbox>
+          <el-checkbox label="11" name="type">60세 이상</el-checkbox>
+        </el-checkbox-group>
     </div>
 
     <el-form-item>
@@ -125,15 +139,17 @@ export default {
         device: "all",
         // m 남성 f 여성
         gender: "all",
+        ages: []
       },
       // 배열로 관리할 데이터 두가지 keywords array
       // keywordGroups array
+      
       keywordGroups: [],
       keywords: [],
     };
   },
   methods: {
-    ...mapActions["generateChartData"],
+    ...mapActions(["generateChartData"]),
     // 키워드 생성하기
     saveKeyword() {
       console.log("test");
@@ -168,8 +184,13 @@ export default {
       console.log(this.form.timeUnit);
       console.log(this.form.device);
       console.log(this.form.gender);
-      // console.log(this.form.ages);
-      const { startDate, endDate, timeUnit, device, gender } = this.form;
+      console.log(this.form.ages);
+      this.form.ages = this.form.ages.reduce((acc, cur) => {
+        acc.push(cur);
+        return acc;
+      }, []);
+      console.log(this.form.ages);
+      const { startDate, endDate, timeUnit, device, gender, ages } = this.form;
       console.dir(startDate);
       if (
         this.keywordGroups.length &&
@@ -177,7 +198,8 @@ export default {
         endDate &&
         timeUnit &&
         device &&
-        gender
+        gender &&
+        ages
       ) {
         const data = {
           keywordGroups: this.keywordGroups,
@@ -186,6 +208,7 @@ export default {
           timeUnit,
           device,
           gender,
+          ages
         };
         const result = await dataLap.post(data);
         console.log(result);

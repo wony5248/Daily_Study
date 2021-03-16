@@ -26,7 +26,7 @@ export default new Vuex.Store({
       commit
     }) {
       const result = await dataLap.get();
-      console.log(result)
+      console.log("get",result)
       const chartData = {
         labels: result.data[0].data.map(li => li.period),
         datasets: result.data.reduce((acc, cur) => {
