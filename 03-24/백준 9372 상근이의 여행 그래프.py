@@ -24,7 +24,7 @@
 #         nation[y-1][x-1] = 1
 #     dfs(0)
 #     print(count-1)
-#     print(N-1)
+
 
 import sys                  # 모두 연결되어있고 각 간선이 비행기 종류 이므로 spanning tree 의 간선의수 가 답
 

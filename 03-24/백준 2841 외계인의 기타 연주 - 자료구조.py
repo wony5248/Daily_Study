@@ -11,6 +11,7 @@ for i in range(N):
             if pret < guitar[row][j]:
                 count += 1
                 del guitar[row][j]
+                guitar[row].insert(j, 0)
                 guitar[row].append(pret)
             elif pret == guitar[row][j]:
                 count += 1

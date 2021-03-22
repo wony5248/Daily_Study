@@ -5,8 +5,7 @@ S = list(map(int, sys.stdin.readline().split()))
 result = set()
 
 for i in range(1, N+1):
-    part = set(combinations(S, i))             # 1자리 부터 N자리까지 모든 부분수열 중복없이 추출
-    part = list(part)
+    part = list(combinations(S, i))             # 1자리 부터 N자리까지 모든 부분수열 중복없이 추출
     for j in range(len(part)):                 # 부분 수열 다 돌면서
         result.add(sum(part[j]))               # 부분 수열의 합 result 에 넣어줌
 count = 1
