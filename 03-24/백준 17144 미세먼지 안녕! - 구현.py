@@ -26,7 +26,6 @@ def clean():         # 공기청정기 돌리는 함수
         cgrid[i][C-1] = cgrid[i+1][C-1]
     for i in range(C-1, 0, -1):           # 위 공기 청정기 -> 방향
         cgrid[hx][i] = cgrid[hx][i-1]
-
     for i in range(lx+1, R-1):             # 아래 공기청정기 ↑ 방향
         cgrid[i][0] = cgrid[i+1][0]   
     for i in range(C-1):                  # 아래 공기청정리 <- 방향
