@@ -1,67 +1,24 @@
-# 2357번 최솟값과 최댓값
-from math import *
-import sys
+X, Y = map(int, input().split())
+per = int((Y * 100 / X) )
+high = 1000000000
+low = 0
 
-# 세그먼트 트리 초기화
-def initMin(node, start, end):
-    if start == end:
-        tree_min[node] = arr[start]
-        return tree_min[node]
+while low <= high:
+    mid = (low + high) // 2                             # 최대값과 최소를 반으로 나눠가면서 조건을 만족하는 판수를 찾음
+    result = int(((Y + mid) * 100 / (X + mid)))         # *를 나중에 해주면 틀림       # 스터디때 질문 파이썬 int 원리?
+    if result <= per:                                   # 승률이 아직 초기 승률과 같거나 작다면
+        low = mid + 1
+    else:                                               # 승률이 초기 승률보다 높다면
+        high = mid - 1
+        
+if int(((Y+low) * 100 / (X+low))) <= per:               # 다 돌았는데 초기 승률보다 작거나 같다면
+    print(-1)
+else:
+    print(low)
 
-    mid = (start + end) // 2
-    tree_min[node] = min(initMin(node*2, start, mid), initMin(node*2+1, mid+1, end))
-    return tree_min[node]
 
-def initMax(node, start, end):
-    if start == end:
-        tree_max[node] = arr[start]
-        return tree_max[node]
 
-    mid = (start + end) // 2
-    tree_max[node] = max(initMax(node*2, start, mid), initMax(node*2+1, mid+1, end))
-    return tree_max[node]
 
-# 최솟값 쿼리
-def queryMin(node, start, end, left, right):
-    if start > right or end < left:
-        return 1000000001
-
-    if left <= start and end <= right:
-        return tree_min[node]
-
-    mid = (start + end) // 2
-    return min(queryMin(node*2, start, mid, left, right), queryMin(node*2+1, mid+1, end, left, right))
-
-# 최댓값 쿼리
-def queryMax(node, start, end, left, right):
-    if start > right or end < left:
-        return 0
-
-    if left <= start and end <= right:
-        return tree_max[node]
-
-    mid = (start + end) // 2
-    return max(queryMax(node*2, start, mid, left, right), queryMax(node*2+1, mid+1, end, left, right))
-
-# main
-n, m = [int(x) for x in sys.stdin.readline().split()]
-
-# 세그먼트 트리 사이즈 계산
-h = int(ceil(log2(n)))       # 트리의 높이
-t_size = 1 << (h+1)     # 대략의 트리 총 노드 개수
-
-arr = []
-tree_min = [0] * t_size     # 최솟값 저장
-tree_max = [0] * t_size     # 최댓값 저장
-
-for _ in range(n):
-    arr.append(int(sys.stdin.readline()))
-
-initMin(1,0,n-1)
-initMax(1,0,n-1)
-
-for _ in range(m):
-    a, b = [int(x) for x in sys.stdin.readline().split()]
-
-    print(queryMin(1, 0, n-1, a-1, b-1), end = ' ')
-    print(queryMax(1, 0, n-1, a-1, b-1))
+# X, Y = map(int,input().split())
+# print(int(X * 100 / Y))
+# print(int((X/Y) * 100))
