@@ -18,3 +18,4 @@ if s1 == s2:
 
 else:
     print(0)
+
