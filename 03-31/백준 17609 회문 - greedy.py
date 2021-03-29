@@ -25,3 +25,6 @@ for i in range(T):
         else:
             print(2)
 
+lst = ["A", "B", "C", "D"]
+print(lst[::-1])
+
