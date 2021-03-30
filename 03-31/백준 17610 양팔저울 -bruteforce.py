@@ -16,7 +16,7 @@ for i in range(1, num+1):
     if i in result:
         continue
     for j in range(K):
-        if chu[j] +i in chu:
+        if chu[j] +i in result:
             result.add(i)
             break
 

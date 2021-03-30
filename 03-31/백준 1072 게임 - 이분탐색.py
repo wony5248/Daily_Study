@@ -19,6 +19,3 @@ else:
 
 
 
-# X, Y = map(int,input().split())
-# print(int(X * 100 / Y))
-# print(int((X/Y) * 100))
