@@ -5,7 +5,6 @@ for i in range(T):
     slst = list(input().rstrip())
     rslst = list(reversed(slst))
     length = len(slst)
-
     ispalin = 0
     if slst == rslst:
         print(0)
@@ -17,8 +16,6 @@ for i in range(T):
                 ispalin = 1
                 break
             slst.insert(j, x)
-
-
 
         if ispalin == 1:
             print(1)
