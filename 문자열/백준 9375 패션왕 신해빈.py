@@ -1,9 +1,7 @@
 T = int(input())
 
 
-
 def solution(clothes):
-
     lst = dict()
     for j in clothes:
         if j in lst:             # 옷이 lst에 없다면 있다면 +1
