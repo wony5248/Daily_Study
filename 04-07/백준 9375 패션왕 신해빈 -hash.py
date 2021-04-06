@@ -1,6 +1,5 @@
 T = int(input())
 
-
 def solution(clothes):
     lst = dict()
     for j in clothes:
