@@ -8,7 +8,8 @@ while True:
     if bomb not in string:
         break
     else:
-        result = string[:string.find(bomb)] + string[string.find(bomb) + len(bomb):]
+        x = string.find(bomb)
+        result = string[:x] + string[x + len(bomb):]
         string = result
 
 if result:
