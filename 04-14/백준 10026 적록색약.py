@@ -13,7 +13,8 @@ queue1 = deque()
 count = 0
 count1 = 0
 
-def bfs1(x, y):          #  적록 색약용 구역 탐색 bfs
+
+def bfs1(x, y):          # 적록 색약용 구역 탐색 bfs
     queue.append([x, y])
     visit1[x][y] = 1
     while queue:
@@ -21,9 +22,11 @@ def bfs1(x, y):          #  적록 색약용 구역 탐색 bfs
         for d in range(4):
             nx = cx + dx[d]
             ny = cy + dy[d]
-            if 0 <= nx < N and 0 <= ny < N and color[nx][ny] == color[cx][cy] and visit1[nx][ny] == 0:
+            if 0 <= nx < N and 0 <= ny < N and color[nx][ny] == color[cx][cy] and not visit1[nx][ny]:
                 visit1[nx][ny] = 1
                 queue.append([nx, ny])
+
+
 def bfs(x, y):         # 일반인 구역 탐색용 bfs
     queue.append([x, y])
     visit[x][y] = 1
@@ -32,12 +35,11 @@ def bfs(x, y):         # 일반인 구역 탐색용 bfs
         for d in range(4):
             nx = cx + dx[d]
             ny = cy + dy[d]
-            if 0 <= nx < N and 0 <= ny < N and normal[nx][ny] == normal[cx][cy] and visit[nx][ny] == 0:
+            if 0 <= nx < N and 0 <= ny < N and normal[nx][ny] == normal[cx][cy] and not visit[nx][ny]:
                 visit[nx][ny] = 1
                 queue.append([nx, ny])
 
 
-  
 for i in range(N):                     # 일반인이 보는 그림
     normal[i] = list(input())
 for i in range(N):                    # 적록색약이 보는 그림
