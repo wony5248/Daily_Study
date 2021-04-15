@@ -1,25 +1,46 @@
-# import sys
-# from collections import deque
-# s = sys.stdin.readline
-# N, M = map(int, s().split())
-# dx = [0, -1, 0, 1]
-# dy = [-1, 0, 1, 0]
-# visit = [[0 for _ in range(M)] for _ in range(M)]
-# key = list()
-# miro = [[0 for _ in range(M)] for _ in range(M)]
-# for i in range(N):
-#     miro[i] = s()
-# for j in range(N):
-#     for k in range(M):
-#         if miro[j][k] == 0 and visit[j][k] == 0:
-#             visit[j][k] = 1
-#             queue = deque()
-#             queue.append([j,k])
-#             while queue:
-#                 x, y = queue.popleft()
-#                 for l in range(4):
-#                     nx = x + dx[l]
-#                     ny = y + dy[l]
-#                     if 0<= nx < M and 0<= ny < N and visit[nx][ny] == 0 and miro[nx][ny] = 1:
-# print()
-# print(miro)
+import sys
+from collections import deque
+input = sys.stdin.readline
+N, M = map(int, input().split())
+miro = [list(input().rstrip()) for _ in range(N)]
+key = [[[0 for _ in range(64)] for _ in range(M)] for _ in range(N)]
+dx = [0, -1, 0, 1]
+dy = [-1, 0, 1, 0]
+
+
+
+def bfs(x, y):
+    queue = deque()
+    queue.append([x, y, 0])
+    key[x][y][0] = 1
+    while queue:
+        cx, cy, cz = queue.popleft()
+        if miro[cx][cy] == "1":
+            print(key[cx][cy][cz] - 1)
+            return
+        for d in range(4):
+            nx = cx + dx[d]
+            ny = cy + dy[d]
+            if 0 <= nx < N and 0 <= ny < M and miro[nx][ny] != "#" and key[nx][ny][cz] == 0:
+                if miro[nx][ny].islower():
+                    nz = cz | (1 << (ord(miro[nx][ny]) - ord("a")))
+                    if key[nx][ny][nz] == 0:
+                        key[nx][ny][nz] = key[cx][cy][cz] + 1
+                        queue.append([nx, ny, nz])
+                elif miro[nx][ny].isupper():
+                    if cz & (1 << (ord(miro[nx][ny]) - ord("A"))):
+                        key[nx][ny][cz] = key[cx][cy][cz] + 1
+                        queue.append([nx, ny, cz])
+                else:
+                    key[nx][ny][cz] = key[cx][cy][cz] + 1
+                    queue.append([nx, ny, cz])
+    print(-1)
+
+
+
+
+for i in range(N):
+    for j in range(M):
+        if miro[i][j] == "0":
+            bfs(i, j)
+

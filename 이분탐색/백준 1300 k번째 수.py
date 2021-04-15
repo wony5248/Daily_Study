@@ -18,6 +18,4 @@ while low <= high:
         result = mid
         high = mid - 1
 
-
-
 print(result)
