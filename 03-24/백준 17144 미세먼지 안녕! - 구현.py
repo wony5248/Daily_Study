@@ -6,8 +6,7 @@ grid = [list(map(int, input().split())) for _ in range(R)]
 cgrid = [[0 for _ in range(C)] for _ in range(R)]
 air = []
 result = 0
-dx = [0, -1, 0, 1]
-dy = [-1, 0, 1, 0]
+
 for i in range(R):
     for j in range(C):
         if grid[i][j] == -1:

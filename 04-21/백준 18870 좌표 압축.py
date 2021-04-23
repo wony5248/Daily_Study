@@ -1,5 +1,5 @@
 import sys
-input =sys.stdin.readline
+input = sys.stdin.readline
 N = int(input())
 coor = list(map(int, input().split()))
 zipcoor= {}                         # 입력 받은 좌표의 크기 순서를 저장하는 dict()

@@ -2,7 +2,7 @@ import sys
 input = sys.stdin.readline
 N = int(input())
 M = int(input())
-string = str(N)
+
 
 broken = set(input().rstrip().split())        # 고장난 버튼
 result = abs(100 - N)
