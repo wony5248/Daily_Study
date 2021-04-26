@@ -4,10 +4,9 @@ count = 0
 while N > K:
     if N % 2 == 0:
         N = N // 2
-        bottle = list(map(lambda x: x*2, bottle[:N]))
-    else:
+    elif N % 2 == 1:
         N += 1
         count += 1
-        bottle.append(bottle[0])
-    print(bottle)
+
+
 print(count)
