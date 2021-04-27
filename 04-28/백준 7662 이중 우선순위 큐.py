@@ -60,7 +60,7 @@ for _ in range(test):
                     visit[max_heap[0][1]] = False
                     heapq.heappop(max_heap)
 
-# 모든 연산이 끝난후에도 ㅅ쓰레기 노드가 들어있을수 있으므로, 결과를 내기전 모두 비우고 각 힙의 첫번째 원소값을 출력한다.
+# 모든 연산이 끝난후에도 쓰레기 노드가 들어있을수 있으므로, 결과를 내기전 모두 비우고 각 힙의 첫번째 원소값을 출력한다.
     while min_heap and not visit[min_heap[0][1]]:
         heapq.heappop(min_heap)
     while max_heap and not visit[max_heap[0][1]]:
