@@ -20,7 +20,7 @@ if 0 <= r < divide and 0 <= c < divide:
     print(arr[r][c])
 elif 0 <= r < divide and 2 ** (N-1) <= c < rsize:
     print(arr[r][c - divide] + (rsize * rsize) // 4)
-elif divide <= r < rsize and 0 <= c <divide:
+elif 0 <= c < divide <= r < rsize:
     print(arr[r - divide][c] + (rsize * rsize) // 4 * 2)
 else:
     print(arr[r - divide][c - divide] + (rsize * rsize) // 4 * 3)
