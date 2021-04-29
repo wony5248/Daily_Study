@@ -8,22 +8,22 @@ check = 0
 
 def solve(x, y, size):
     global check
-    for i in range(x, x + size):
-        for j in range(y, y + size):
-            arr[i][j] = check
-            check += 1
+    if size == 2:
+        for i in range(x, x + size):
+            for j in range(y, y + size):
+                arr[i][j] = check
+                check += 1
+    else:
+        solve(x, y, size // 2)  # 1사분면
+        solve(x, y + size // 2, size // 2)  # 2사분면
+        solve(x + size // 2, y, size // 2)  # 3사분면
+        solve(x + size // 2, y + size // 2, size // 2)
 
-solve(0, 0, 2)
-for i in range(rsize):
+solve(0, 0, 2 ** N)
+print(arr[r][c])
+for i in range(2**N):
     print(arr[i])
-if 0 <= r < divide and 0 <= c < divide:
-    print(arr[r][c])
-elif 0 <= r < divide and 2 ** (N-1) <= c < rsize:
-    print(arr[r][c - divide] + (rsize * rsize) // 4)
-elif 0 <= c < divide <= r < rsize:
-    print(arr[r - divide][c] + (rsize * rsize) // 4 * 2)
-else:
-    print(arr[r - divide][c - divide] + (rsize * rsize) // 4 * 3)
+
 
 
 
