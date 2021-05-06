@@ -1,28 +1,39 @@
 import sys
-from collections import deque
+import heapq
 input = sys.stdin.readline
 
-T = int(input().rstrip())
+T = int(input())
 for i in range(T):
-    K = int(input().rstrip())
-    queue = deque()
-    for j in range(K):
-        com = input().rstrip().split()
+    k = int(input())
+    minheap = []
+    maxheap = []
+    heap = []
+    for j in range(k):
+        com = list(input().split())
         if com[0] == "I":
-            queue.append(int(com[1]))
-        elif com[0] == "D" and queue:
-            queue = deque(sorted(list(queue)))
-            if com[1] == "-1":
-                queue.popleft()
-            elif com[1] == "1":
-                queue.pop()
-        elif com[0] == "D" and not queue:
-            continue
+            heapq.heappush(minheap, int(com[1]))
+            heapq.heappush(maxheap, int(com[1]) * -1)
+        elif com[0] == "D" and com[1] == "-1" and minheap:
+            heapq.heappop(minheap)
+        elif com[0] == "D" and com[1] == "1" and maxheap:
+            heapq.heappop(maxheap)
+        print(minheap)
+        print(maxheap)
+        print()
 
-    if not queue:
+    for j in range(len(maxheap)):
+        maxheap[j] = maxheap[j] * -1
+    minheap = set(minheap)
+
+    maxheap = set(maxheap)
+
+    heap = minheap & maxheap
+    if not heap:
         print("EMPTY")
     else:
-        print("%d %d" %(max(queue), min(queue)))
+        heap = list(heap)
+        heap.sort()
+        print("%d %d" %(heap[-1], heap[0]))
 
 
 
