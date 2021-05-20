@@ -1,17 +1,19 @@
 import sys
+sys.setrecursionlimit(20000000)
+input = sys.stdin.readline
 
 FF, FS, SF, SS = map(int, input().split())
-song = []
-stack = []
-for i in range(FF):
-    song.append("FF")
-for i in range(FS):
-    song.append("FS")
-for i in range(SF):
-    song.append("SF")
-for i in range(SS):
-    song.append("SS")
-print(song)
+answer = 0
+if FF == 0 and FS == 0:
+    answer = SS
+    if SF > 0:
+        answer += 1
+elif FS == 0:
+    answer = FF
+else:
+    if FS > SF:
+        answer = FF + SS + SF + SF + 1
+    else:
+        answer = FF + SS + FS + FS
 
-for so in song:
-    
+print(answer)
