@@ -151,7 +151,9 @@ else:  # 나머지 2개의 삼각형
 
 lst = list(stack)
 lst.sort()  #작은거부터 출력해야 하기에
-if stack[0] == stack[1] or stack[1] == stack[2] or stack[0] == stack[2]:   # 한점이거나,직선일때
+if stack[0] == stack[1] :   # 한점이거나,직선일때
+    print(0)
+if len(stack) > 2 and (stack[0] == stack[2] or stack[1] == stack[2]):
     print(0)
 else:
     if istri == 1 and zero == 0 and count == total:    # 세좌표가 직각 삼각형이고, 내부에 0이 없고, 삼각형을 이루는 1의 갯수가 그래프 내의 전체 1의 갯수와 같다면
