@@ -1,9 +1,10 @@
 import sys
+input = sys.stdin.readline
 T = int(input())
 for i in range(T):
-    p = list(sys.stdin.readline())
-    n = int(sys.stdin.readline())
-    arr = sys.stdin.readline()[1:-2].split(",")
+    p = list(input().rstrip())
+    n = int(input())
+    arr =input()[1:-2].split(",")
     lst = []
     iserror = 0
     isreverse = 0
