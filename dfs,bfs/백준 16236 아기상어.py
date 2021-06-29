@@ -30,7 +30,10 @@ def bfs(x, y):
                     check[nx][ny] = check[cx][cy] + 1
                     count.append([nx, ny, check[nx][ny]])
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c6af26e887143599d9d35a5ddfc507d79dfe2549
 for i in range(N):
     for j in range(N):
         if space[i][j] == 9:
