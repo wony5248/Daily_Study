@@ -5,6 +5,7 @@ for tc in range(T):
     food = [list(map(int, input().split())) for _ in range(N)]
     result = 99999999
     for s1 in combinations(range(N), N//2):
+        print(s1)
         s2 = [i for i in range(N) if i not in s1]
         sum1 = 0
         sum2 = 0
@@ -16,3 +17,5 @@ for tc in range(T):
         if result > tmp:
             result = tmp
     print("#%d %d" %(tc+1, result))
+
+
