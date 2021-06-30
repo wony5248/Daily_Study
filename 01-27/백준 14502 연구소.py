@@ -5,7 +5,7 @@ result = 0
 dx = [0, -1, 0, 1]
 dy = [-1, 0, 1, 0]
 N, M = map(int, sys.stdin.readline().split())
-lab = [[0 for _ in range(M)] for _ in range(N)]
+lab = []
 
 for i in range(N):
     lab.append(list(map(int, sys.stdin.readline().split())))
