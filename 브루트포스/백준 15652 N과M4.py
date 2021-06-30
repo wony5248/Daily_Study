@@ -10,6 +10,8 @@
 
 N, M = map(int, input().split())
 result = []
+
+
 def solve(x):
     if x == M:
         print(" ".join(map(str, result)))
