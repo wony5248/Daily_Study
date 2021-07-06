@@ -1,24 +1,24 @@
 # daily-CS_study
 ## Programming
-[Programming](https://github.com/wony5248/daily-CS_study/edit/main/Programming.md)
+[공통 프로그래밍 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Programming.md)
 
 ## DataStructure
-[DataStructure](https://github.com/wony5248/daily-CS_study/edit/main/DataStructure.md)
+[자료구조 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/DataStructure.md)
 
 ## Algorithm
-[Algorithm](https://github.com/wony5248/daily-CS_study/edit/main/Algorithm.md)
+[알고리즘 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Algorithm.md)
 
 ## Network
-[Network](https://github.com/wony5248/daily-CS_study/edit/main/Network.md)
+[네트워크 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Network.md)
 
 ## OperatingSystem
-[OperatingSystem](https://github.com/wony5248/daily-CS_study/edit/main/OperatingSystem.md)
+[운영체제 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/OperatingSystem.md)
 
 ## DataBase
-[DataBase](https://github.com/wony5248/daily-CS_study/edit/main/DataBase.md)
+[데이터베이스 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/DataBase.md)
 
 ## Language(Java)
-[Language(Java)](https://github.com/wony5248/daily-CS_study/edit/main/Language(Java).md)
+[개발언어 (Java) 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Language(Java).md)
 
 ## Backend
-[Backend](https://github.com/wony5248/daily-CS_study/edit/main/Backend.md)
+:[백엔드 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Backend.md)
