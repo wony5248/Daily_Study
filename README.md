@@ -25,4 +25,4 @@
 :memo:[백엔드 지식 바로가기](https://github.com/wony5248/daily-CS_study/blob/main/Backend.md)
 
 ## Frontend
-:memo:[프론트엔드 지식 바로가기](https://github.com/wony5248/daily-CS_study/blob/main/React.md)
+:memo:[프론트엔드 지식 바로가기](https://github.com/wony5248/daily-CS_study/blob/main/Frontend.md)
