@@ -75,7 +75,7 @@
 	별도의 설정 없이는 외부에서 접근 불가능
 
 # OSI 7계층
-	* 7계층(응용 계층): 사용자와 직접 상호작용하는 응용 프로그램들이 포함된 계층
+* 7계층(응용 계층): 사용자와 직접 상호작용하는 응용 프로그램들이 포함된 계층
 * 6계층(표현 계층): 데이터의 형식을 정의하는 계층
 * 5계층(세션 계층): 컴퓨터끼리 통신을 하기 위해 세션을 만드는 계층
 * 4계층(전송 계층): 최종 수신 프로세스로 데이터의 전송을 담당하는 계층
@@ -88,35 +88,36 @@
 	응용계층의 프로토콜로 TCP/IP위에서 작동
 	상태 가지지 않는 Stateless프로토콜이며 Method, Path, Version, Headers, Body 등으로 구성
 	평문 데이터를 전송하는 프로토콜로 보안에 취약
+# HTTPS 프로토콜
+	HTTP에 암호화가 추가된 프로토콜
+	자신의 공개키를 갖는 인증서를 발급하여 보내는 메세지를 공개키로 암호화
+	개인키가 있어야만 복호화 가능
 
-HTTP 헤더
-	일반 헤더, 엔터티 헤더, 요청헤더, 응답 헤더
-	일반헤더 - Date, Connection, Cache-Control, Pragma, Trailer
-	엔터티 헤더
-		요청 및 응답메시지 모두에서 사용 가능한 entity 에 대한 설명 헤더
-	요청 헤더
-		HTTP 요청 메시지 내에서만 나타나며 가장 방대함
-	keep-alive - 두 조건전에는 연결 계속 유지해라
-		timeout - 최소 특정 시간동안
-		max -  최대 요청의 수
+# HTTP 헤더
+* 일반헤더  
+	Date, Connection, Cache-Control, Pragma, Trailer
+* 엔터티 헤더
+	요청 및 응답메시지 모두에서 사용 가능한 entity 에 대한 설명 헤더
+* 요청 헤더
+	HTTP 요청 메시지 내에서만 나타나며 가장 방대함
+* keep-alive - 두 조건전에는 연결 계속 유지해라
+	timeout - 최소 특정 시간동안
+	max -  최대 요청의 수
 
-CORS(Cross Origin Resource Sharing)
+# CORS(Cross Origin Resource Sharing)
 	추가적인 HTTP header를 이용해서 애플리케이션이 다른 origin의 리소스에 접근할 수 있도록 하는 메커니즘
 	다른 origin에서 내 리소스에 함부로 접근하지 못하게 하기위해서도 사용
 	
-REST API
+# REST API
 	RESTful API는 HTTP 통신에서 어떤 차원에 대한 CRUD 요청을 Resource와 Method로 표현하여 특정한 형태로 전달하는 방식입니다.
 	RESTful ApI는 아래와 같은 것들로 구성
 	Resource (자원, URI)
 	Method(요청 방식, GET, POST 등)
 	Represenntation of Resource(자원의 형태, JSON or XML 등)
 
-API gateway
+# API gateway
 	API 서버 앞단에서 모든 API 서버들의 엔드포인트를 단일화 해주는 또 다른 서버
 	API에 대한 인증과 인가 기능을 가지고 있다
 	메시지의 내용에 따라 어플리 케이션 내부에 있는 마이크로 서비스로 라우팅하는 역할 담당
 
-HTTPS
-	HTTP에 암호화가 추가된 프로토콜
-	자신의 공개키를 갖는 인증서를 발급하여 보내는 메세지를 공개키로 암호화
-	개인키가 있어야만 복호화 가능
+
