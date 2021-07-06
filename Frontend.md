@@ -480,7 +480,9 @@ mounted : 초기 렌더링 직전에 컴포넌트에 직접 접근 할 수 있�
 * updating
 ```
 updated : 데이터가 변하여 재 렌더링이 일어난 후에 실행 
-destruction
+```
+* destruction
+```
 destroyed : 뷰 인스턴스가 제거 된 후에 호출
 ```
 
