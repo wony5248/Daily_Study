@@ -116,7 +116,7 @@ context switching을 위한 오버헤드가 발생
 	스케줄링은 OS가 강제적으로 CPU사용을 중단시키는지 여부에 따라서 강제할 경우 선점형(preemptive) 강제하지 않는 경우 비선점형(non-preemptive) 스케쥴링으로 나뉜다.
 	
 * 선점형 스케줄링 - time quantum을 가지고 time quantum이 지나면 프로세스가 남아있어도 강제적으로 바꾸는 방식
-** Round Robin Scheduling
+	** Round Robin Scheduling
 	```
 	CPU를 시간단위(time quantum)로 할당하는 선점형 스케줄링 방식
 	먼저 대기한 작업이 먼저 CPU를 사용
@@ -126,7 +126,7 @@ context switching을 위한 오버헤드가 발생
 	시간단위가 너무 작을경우 잦은 context switching으로 인한 오버헤드로 인해 효율이 매우 떨어질 수 있다.
 	```
 	
-** Multilevel Queue Scheduling
+	** Multilevel Queue Scheduling
 	```
 	ready 큐를 여러개 만들어 각각에 다른 우선순위와 스케줄링 알고리즘 사용하는 기법
 	Interactive한 동작이 필요한 프로세스 위한 Foreground 큐와 
@@ -136,7 +136,7 @@ context switching을 위한 오버헤드가 발생
 	상위 큐에 프로세스가 계속 있으면 하위 큐에 기아 현상 발생 가능
 	```
 	
-** Multilevel Feedback Queue Scheduling
+	** Multilevel Feedback Queue Scheduling
 	```
 	다단계 큐에서 프로세스들이 다른 큐로 이동할 수 있게 한 스케줄링 기법
 	design choices
@@ -147,37 +147,38 @@ context switching을 위한 오버헤드가 발생
 	```
 	
 * 비선점형 스케줄링 - 프로세스가 I/O를 하는 상황에서만 수행되는 스케줄링
-** FCFS(First Come First Served) scheduling
-```
-선착순 방식의 스케줄링으로 비선점형 스케줄링이다.
-먼저 들어온 순서대로 CPU를 할당한다.
-작업의 순서에 따라서 대기시간이 변한다.
-```
-
-** SJFS(Shortest Job First Scheduling) scheduling
-```
-가장 CPU Burst 시간이 짧은 프로세스부터 CPU에 할당하는 방식
-비선점형 선점형 둘다 가능하다.
-최소의 평균 대기시간을 제공한다는 특징이 있다.
-```
-
-** Priority Scheduling
-```
-프로세스에 우선순위를 주고 우선순위에 따라 CPU에 순서대로 할당하는 스케줄링 방식
-비선점형, 선점형 둘다가능
-낮은 우선순위의 프로세스는 늦게 수행되거나 수행되지 못할 수도있는 기아(starvation) 문제 발생 가능
-```
-
-*** 기아 문제를 해결하기 위해 Aging 기법 사용
+	** FCFS(First Come First Served) scheduling
 	```
-	기다리는 시간 늘어날수록 우선순위 증가시켜주는 방법
-	우선순위를 정적, 동적으로 주는 방법 둘다 가능
-	동적일 경우 시스템 응답속도 증가시키는 장점이 있지만 오버헤드가 늘어날 수 있는 단점도 있다.
+	선착순 방식의 스케줄링으로 비선점형 스케줄링이다.
+	먼저 들어온 순서대로 CPU를 할당한다.
+	작업의 순서에 따라서 대기시간이 변한다.
 	```
+
+	** SJFS(Shortest Job First Scheduling) scheduling
+	```
+	가장 CPU Burst 시간이 짧은 프로세스부터 CPU에 할당하는 방식
+	비선점형 선점형 둘다 가능하다.
+	최소의 평균 대기시간을 제공한다는 특징이 있다.
+	```
+
+	** Priority Scheduling
+	```
+	프로세스에 우선순위를 주고 우선순위에 따라 CPU에 순서대로 할당하는 스케줄링 방식
+	비선점형, 선점형 둘다가능
+	낮은 우선순위의 프로세스는 늦게 수행되거나 수행되지 못할 수도있는 기아(starvation) 문제 발생 가능
+	```
+
+		*** 기아 문제를 해결하기 위해 Aging 기법 사용
+			```
+			기다리는 시간 늘어날수록 우선순위 증가시켜주는 방법
+			우선순위를 정적, 동적으로 주는 방법 둘다 가능
+			동적일 경우 시스템 응답속도 증가시키는 장점이 있지만 오버헤드가 늘어날 수 있는 단점도 있다.
+			```
 	
 # 멀티플 코어 스케줄링
 	멀티 코어는 확장성이 좋다.
 	GPU의 경우 많은수의 코어를 병렬적으로 처리하는데 멀티코어 방식이 성능적으로 유리
+	
 * 스케줄링 방식
 ```
 Load Balancing	
