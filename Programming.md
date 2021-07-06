@@ -1,21 +1,21 @@
-OOP란
+#OOP란
 
 OOP는 현실 세계를 프로그래밍으로 옮겨와 현실 세계의 사물들을 객체로 보고, 그 객체로부터 개발하고자 하는 특징과 기능을 뽑아와 프로그래밍 하는 기법
 OOP로 코드 작성 시 재사용성과 변형 가능성을 높일 수 있습니다.
 
-OOP 5가지 설계 원칙(SOLID)
-SRP(Single Responsibility Principle) 
-클래스는 단 하나의 목적을 가져야 하며, 클래스를 변경하는 이유는 단 하나의 이유여야 한다.
-OCP(Open-Closed Principle)
-클래스는 확장에는 열려 있고, 변경에는 닫혀 있어야 한다.
-LSP(Liskov Substitution Principle)
-상위 타입의 객체를 하위 타입으로 바꾸어도 프로그램은 일관적으로 동작해야 한다.
-ISP(Interface Segregation Principle)
-클라이언트는 이용하지 않는 메소드에 의존하지 않도록 인터페이스를 분리해야 한다.
-DIP(Dependency Inversion Principle)
-클라이언트는 추상화(인터페이스)에 의존해야 하며, 구체화(구현된 클래스)에 의존해선 안된다.
+#OOP 5가지 설계 원칙(SOLID)
+	SRP(Single Responsibility Principle) 
+		클래스는 단 하나의 목적을 가져야 하며, 클래스를 변경하는 이유는 단 하나의 이유여야 한다.
+	OCP(Open-Closed Principle)
+		클래스는 확장에는 열려 있고, 변경에는 닫혀 있어야 한다.
+	LSP(Liskov Substitution Principle)
+		상위 타입의 객체를 하위 타입으로 바꾸어도 프로그램은 일관적으로 동작해야 한다.
+	ISP(Interface Segregation Principle)
+		클라이언트는 이용하지 않는 메소드에 의존하지 않도록 인터페이스를 분리해야 한다.
+	DIP(Dependency Inversion Principle)
+		클라이언트는 추상화(인터페이스)에 의존해야 하며, 구체화(구현된 클래스)에 의존해선 안된다.
 
-객체지향 4가지 특성
+#객체지향 4가지 특성
 	캡슐화
 		실제로 구현 부분을 외부에 드러나지 않도록 하는것
 		변수와 메소드를 하나로 묶음
