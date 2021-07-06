@@ -166,17 +166,17 @@
 		*개발 초기의 오버헤드
 		*Linux 친화적
 
-TDD ( Test_driven Development)
+# TDD ( Test_driven Development)
 	매우 짧은 사이클의 반복에 의존하는 개발 프로세스
 	우선 요구되는 기능에 대한 테스트케이스 작성 -> 그에 맞는 코드 작성 -> 상황에 맞게 리팩토링
 	기능의 요구사항을 확실히 이해해야 하기때문에 개발전 요구 사항 집중할 수 있지만 
 	테스트를 위한 진입장벽이 높고 작성해야 하는 코드양 증가
 
-DDD (Domain_Driven Design)
+# DDD (Domain_Driven Design)
 	실세계에서 사건이 발생하는 집합인 Domain을 중심으로 설계하는 방법
 	문맥에 따라 객체의 역할이 바뀔수 있는것
 
-MSA(Microservice Architecture)
+# MSA(Microservice Architecture)
 	MSA는 모든 시스템의 구성요소가 한 프로젝트에 통합되어 있는 모놀리식 구조의 한계점을 극복하고자 등장
 	장점
 		일부 서비스 장애 발생해도 전체 서비스에 장애 X
