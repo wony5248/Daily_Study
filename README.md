@@ -21,4 +21,4 @@
 [개발언어 (Java) 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Language(Java).md)
 
 ## Backend
-:[백엔드 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Backend.md)
+:sheep:[백엔드 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Backend.md)
