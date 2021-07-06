@@ -18,7 +18,7 @@
 [데이터베이스 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/DataBase.md)
 
 ## Language(Java)
-[개발언어 (Java) 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Language(Java).md)
+:java:[개발언어 (Java) 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Language(Java).md)
 
 ## Backend
 :sheep:[백엔드 지식 바로가기](https://github.com/wony5248/daily-CS_study/edit/main/Backend.md)
