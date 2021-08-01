@@ -1,0 +1,5 @@
+x = map(int, input().split())
+lst = list(x)
+print(lst)
+x = list(map(int, input().split()))
+print(x)
