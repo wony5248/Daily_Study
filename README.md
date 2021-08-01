@@ -1,1 +1,2 @@
-# Daily_Algorithm
+# Daily_Study
+> 1일 1커밋을 목표로 하는 하루동안 한 공부에 대한 정리 및 알고리즘 풀이
