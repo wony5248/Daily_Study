@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .bbq{ color : brown}
+        .kfc{ color : red}
+        #app{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+    </style>
+  </head>
+  <body>
+      <div id="app" class="bbq" v-on:click="status" v-bind:class="{bbq:!attachKfc, kfc:attachKfc}">
+        HI
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data:{
+                attachKfc:false
+            },
+            methods:{
+                status(){
+                    this.attachKfc = !this.attachKfc
+                }
+            }
+        })
+        function color () {
+            if (document.querySelector("#app").className === "bbq"){
+                document.querySelector("#app").className = "kfc"
+            }
+            else{
+                document.querySelector("#app").className = "bbq"
+            }
+            
+        }
+    </script>
+  </body>
+</html>

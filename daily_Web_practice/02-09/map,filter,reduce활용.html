@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // filter, map
+        const arr =[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        const result = arr.filter(li => li % 2 === 0)
+        const arr2 = result.map(li => li * 10)
+
+        //reduce
+        const result2 = arr.reduce((acc, cur) => {
+            if (cur % 2 === 0)
+            {
+                acc.push(cur * 10)
+            }
+            return acc
+        }, [])
+    </script>
+</body>
+</html>

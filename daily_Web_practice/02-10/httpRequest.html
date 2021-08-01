@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // httpRequest 만든다 . -> new
+        //open 메소드는 서버로 보낼 Ajax 형식 설정
+        //send 메소드는 작성된 Ajax 요청 서버로 전달
+
+        //2. 서버 응답 처리에 대한 로직음 httpRequest.onreadystateChange 활용
+        function getData(){
+            const httpRequest = new XMLHttpRequest();
+            
+
+            httpRequest.onreadystatechange = function() {
+                if (httpRequest.readyState === httpRequest.DONE){ // httprequest.DONE = 4
+                    if(httpRequest.status === 200 || httpRequest.status === 201){
+                        console.log(httpRequest.response)
+                    }else{
+                        console.log(httpRequest.responseText)
+                    }
+                }
+            }
+            httpRequest.open("get", "https://jsonplaceholder.typicode.com/todos/")
+            httpRequest.send();
+            
+        }
+        
+        const data = getData()
+    </script>
+</body>
+</html>

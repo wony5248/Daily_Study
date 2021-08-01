@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>제목</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css"
+      integrity="sha384-r4NyP46KrjDleawBgD5tp8Y7UzmLA05oM1iAEQ17CSuDqnUK2+k9luXQOfXJCJ4I"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"
+      integrity="sha384-oesi62hOLfzrys4LxRF63OJCXdXDipiYWBnvTl9Y9/TRlw5xlKIEHpNyvvDShgf/"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container-fluid">
+        <div class="h5 text-white text-decoration-none" href="#">TODO</div>
+      </div>
+    </nav>
+    <div>
+      <form
+        action="/add"
+        method="POST"
+        class="d-flex justify-content-center align-items-center mt-5"
+      >
+        <div class="w-25">
+          <input
+            name="todo"
+            type="text"
+            class="form-control"
+            placeholder="메모를 입력하세요"
+          />
+        </div>
+        <button type="submit" class="btn btn-primary ml-4">메모하기</button>
+      </form>
+      <ul class="list-group w-75 ml-auto mr-auto mt-3">
+        <% locals.data && locals.data.forEach(li => { %>
+
+        <li
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <input class="form-check-input" type="checkbox" value=""
+          class="flexCheckDefault" 
+          onchange="toggleCheck(`<%=li.id%>`, `<%=li.checked%>`)"
+          <%=Number(li.checked) === 0 ? "" : "checked"%> />
+          <span>
+            <input
+              class="form-check-input w-100 border-0 text-center"
+              type="text"
+              value="<%=li.todo%>"
+              readonly
+            />
+          </span>
+          <!-- onclick="updateTodo(`<%=li.id%>`)" -->
+          <div class="d-flex align-items-center">
+            <button class="btn btn-warning btn-sm">수정</button>
+            <button
+              class="btn btn-danger btn-sm ml-3"
+              onclick="deleteTodo(`<%=li.id%>`)"
+            >
+              삭제
+            </button>
+          </div>
+        </li>
+        <% }) %>
+        <!--반복구간 -->
+
+        <!--//반복구간 -->
+      </ul>
+    </div>
+    <script>
+      function toggleCheck(id, check) {
+        console.log(id);
+        
+        
+        let checked;
+        if (Number(check) === 0){
+          checked = "1"
+        }else{
+          checked = "0"
+        }
+        // check ? checked = 0 : checked = 1
+        console.log(checked);
+        location.href = `/update/todo/check/${id}?checked=${checked}`
+
+      }
+      function deleteTodo(id) {
+        console.log(id);
+        const deleteQuestion = confirm("삭제하시겠습니까?");
+        if (deleteQuestion) {
+          location.href = `/delete/todo/${id}`;
+        }
+      }
+    </script>
+  </body>
+</html>

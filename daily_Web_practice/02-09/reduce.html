@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // const arr = [1, 2, 3, 4, 5]
+
+        // arr.reduce((accumulator, current, index, str) => {
+        //     console.log(`accumulator:${accumulator}`);
+        //     console.log(`current:${current}`);
+        //     console.log(`index:${index}`);
+        //     console.log(`str:${str}`);
+        //     return accumulator + current;
+        // }, 0)
+        const arr2 = ["홍길동", "임꺽정", "홍길동", "피카츄", "피카츄", "홍길동"]
+        const result = arr2.reduce((acc, cur) => {
+            if (acc[cur]){
+                acc[cur]++;
+            }
+            else
+            {
+                acc[cur] = 1;
+            }
+            return acc;
+        }, [])
+        const result2 = arr2.reduce((acc, cur) => {
+            acc[cur] = (acc[cur] ? acc[cur] +1 : 1);
+            return acc;
+        }, [])
+    </script>
+</body>
+</html>

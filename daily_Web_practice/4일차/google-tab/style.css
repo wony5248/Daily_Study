@@ -1,0 +1,161 @@
+*{
+    box-sizing: border-box;
+}
+
+#body-background{
+    background-color: #fff;
+}
+
+/* 헤더 부분 */
+.header-nav{
+    display: flex;
+    justify-content: flex-end;
+}
+.header-nav-list-wrapper{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+}
+.header-nav-list-wrapper >li{
+    margin-left: 10px;
+}
+.toggle-button{
+    background-color: #000;
+    border: 1px solid #eee;
+    color: white;
+    padding: 5px 8px;
+    cursor: pointer;
+}
+.QR{
+    color: rgb(0, 214, 0);
+}
+
+/* 메인 부분 */
+.main-container{
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+.image-logo{
+    width: 272px;
+}
+/* 북마크 부분 */
+.bookmark-section {
+    margin-top:40px;
+}
+.img-dot-wrapper{
+    display: flex;
+}
+.dot{
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    margin: 0px 2px;
+    background: rgb(179, 179, 179);
+
+}
+.bookmark-text-dot{
+    color: white;
+}
+.bookmark-wrapper{
+    display: flex;
+    justify-content: center;
+    max-width: 500px;
+    min-width:430px;
+    flex-wrap: wrap;
+}
+
+.bookmark-item{
+    margin-top:30px;
+    width:112px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content:center;
+    /* a 태그 밑줄 없애기 */
+    text-decoration: none;
+
+}
+.main-container{
+    text-align: center;
+
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+}
+    /* 로고 부분 /
+    .image-logo{
+        width: 272px;
+    }
+    /// 로고 부분 */
+
+/* 검색 부분 */
+.search-container{
+    position: relative;
+    margin-top: 50px;  
+    width: 650px; 
+    
+}
+
+#search-input{
+    height: 60px;
+    width: 100%;
+    border: 1px solid rgb(0, 214, 0);
+    padding-left: 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+#search-input::placeholder{
+    color: rgb(233, 233, 233)
+}
+.search-icon{
+    
+    width: 120px;
+    position: absolute;
+    top: 11px;
+    left: 520px;
+}
+
+.img-icon-wrapper{
+    width: 50px;
+    height: 50px;
+    border-radius: 16px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f2f3f5;
+    font-size:24px;
+}
+
+.img-icon-wrapper > img{
+    width:60%;
+    height:60%;
+}
+
+.bookmark-text {
+    margin-top: 5px;
+    color:#000;
+}
+
+/* 다크모드css */
+.toggle-button-darkmode{
+    background-color: #fff;
+    color:#000;
+}
+
+.body-background-darkmode{
+    background-color:#000;
+}
+
+.img-icon-wrapper-darkmode{
+    background:#fff;
+}
+
+.text-darkmode {
+    color:#fff;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = "ABCHIMIN";
+        let b = "BBQCOCO";
+        let c = a + b;
+
+        let result = [];
+
+        for (let i = c.length-1; i >= 0; i--)
+        {
+            if (i % 2 ==1)
+            {
+                continue;
+            }
+            result.push(c[i]);
+        }
+        alert(result)
+    </script>
+</body>
+</html>

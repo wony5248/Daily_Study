@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data:{
+                message:"test"
+            },
+            methods:{
+
+            },
+            // 컴포넌트가 dom에 추가되기도 전, 가장 먼저 실행되는 라이프사이클
+            // 데이터에 접근이 불가능하다.
+            beforeCreate(){
+                console.log("beforeCreate")
+                console.log(this.message);
+            },
+            // 데이터, computed, methods에 접근이 가능하나, dom에는 추가되지 않는다.
+            created(){
+                console.log("created");
+                console.log(this.message);
+            },
+            // 가상 DOM은 생성되었으나 실제 DOM에는 없는 상태
+            beforeMount(){
+                console.log("beforeMount");
+                console.log(this.message);
+            },
+            // 가상 DOM이 실제 DOM에 부착되고 난 후에 실행
+            // 가장많이 사용한다, axios 호출등에도 사용
+            mounted(){
+                console.log("mounted");
+                console.log(this.message);
+            },
+            // data가 변해서 DOM에 그 변화를 적용시킬때 직전에 호출
+            beforeUpdate(){
+                console.log("beforeUpdate");
+            },
+            // date가 변경이 완료되어 DOM에 적용된 상태, 변경된 값을 통해 DOM에 접근한다
+            // updated에서 data를 변경하게 되면 무한루프가 발생 할 수 있다.
+            updated(){
+                console.log("updated")
+            },
+            // 인스턴스가 해체되기 직전에 호출, 
+            // 해당 단계에서 이벤트 리스너를 해제하는등, 인스턴스가 사라지기 전에 해야 할 일들을 수행한다.
+            beforeDestroy(){
+                console.log("beforeDestroy");
+            },
+            //해체가 끝난 이후기 때문에 인스턴스의 속성에 접근 할 수 없다.
+            destroyed(){
+                console.log("destroyed");
+            }
+        })
+
+    </script>
+</body>
+</html>

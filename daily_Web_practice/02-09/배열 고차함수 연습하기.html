@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container"></div>
+    <!-- <li id="3">
+        <label>
+            <input type="checkbox" />
+        </label>
+    </li> -->
+
+    <script>
+        const bucketlist = [
+            { id: 3, text: "여행 가기", done: false },
+            { id: 2, text: "치킨 먹기", done: true },
+            { id: 1, text: "코딩 하기", done: false }
+        ]
+
+        const listComponent = (id, text) => `
+        <li id="${id}">
+        <label>
+            <input type="checkbox"/>${text}
+        </label>
+        </li>
+        `
+
+        // function render() {
+        //     let html = '';
+        //     bucketlist.forEach(bucketlist => {
+        //         html += listComponent(bucketlist.id, bucketlist.text);
+        //     })
+        //     return html;
+        // }
+
+        const render = () => bucketlist.reduce((acc, cur) => {
+            acc += listComponent(cur.id, cur.text)
+            return acc;
+        },"")
+
+        document.querySelector(".container").innerHTML = render()
+        // console.log(render());
+    </script>
+</body>
+
+</html>

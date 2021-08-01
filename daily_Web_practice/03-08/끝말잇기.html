@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <div id="app">
+        <div>끝말잇기</div>
+        <br>
+        <div>{{word}}</div>
+        <!-- e.preventDefault 랑 동일 @submit.prevent -->
+        <form @submit.prevent="onSubmitForm">
+            <input type="text" v-model="value" ref="answer">
+            <button type="submit">입력</button>
+        </form>
+        <div>{{result}}</div>
+      </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        const app = new Vue({
+            el: "#app",
+            data: {
+                word:"대파",
+                result:"",
+                value:''
+            },
+            methods:{
+                onSubmitForm(e){
+                    // e.preventDefault()
+                    if(this.word[this.word.length - 1] === this.value[0]){
+                        this.result = "정답"
+                        this.word = this.value
+                    }
+                    else{
+                        this.result = "땡"
+                    }
+                    this.value = ""
+                    //vue에서 예외적으로 DOM을 직접 제어해야할 경우
+                    //ref사용
+                    console.log(this.$refs);
+                    this.$refs.answer.focus();
+                }
+            }
+        })
+
+
+    </script>
+  </body>
+</html>

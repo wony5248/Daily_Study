@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const button = document.createElement("button");
+        const buttonText = document.createTextNode("hello world");
+        button.append(buttonText);
+        // button.textContent = "와우 친구들"
+
+        const div = document.createElement("div");
+        const body = document.querySelector("body");
+        body.append(button);
+    </script>
+</body>
+</html>
