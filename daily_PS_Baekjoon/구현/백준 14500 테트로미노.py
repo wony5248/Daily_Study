@@ -35,11 +35,14 @@ for i in range(2, N):
 for i in range(N-1):
     for j in range(1, M-1):
         result1.append(paper[i][j] + sum(paper[i+1][j-1:j+2]))   # ㅗ 모양
+for i in range(1, N):
+    for j in range(1, M-1):
+        result1.append(sum(paper[i][j:j + 2]) + sum(paper[i - 1][j + 1:j + 3]))  # ㄴ 반대 왼 + ㄱ 반대 오
 for i in range(1, N-1):
     for j in range(M-1):
         result1.append(sum(paper[i][j:j+2]) + paper[i-1][j+1] + paper[i+1][j+1])  # ㅓ 모양
         result1.append(sum(paper[i][j:j+2]) + paper[i+1][j] + paper[i-1][j+1])   #ㄴ반대위 + ㄱ반대아래
-        result1.append(sum(paper[i][j:j+2]) + sum(paper[i-1][j+1:j+3]))    # ㄴ 반대 왼 + ㄱ 반대 오
+
 for i in range(N-1):
     for j in range(2, M):
         result1.append(paper[i][j] + sum(paper[i+1][j-2:j+1]))
