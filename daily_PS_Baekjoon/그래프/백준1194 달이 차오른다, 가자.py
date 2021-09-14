@@ -44,3 +44,4 @@ for i in range(N):
         if miro[i][j] == "0":
             bfs(i, j)
 
+

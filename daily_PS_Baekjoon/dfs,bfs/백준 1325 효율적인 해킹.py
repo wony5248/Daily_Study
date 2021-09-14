@@ -27,3 +27,4 @@ for i in range(N):
     if res[i] == m:
         print(i+1, end=' ')
 print()
+
