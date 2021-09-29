@@ -21,3 +21,4 @@ while low <= high:        # 이분 탐색
         low = mid + 1            
 
 print(high)
+
