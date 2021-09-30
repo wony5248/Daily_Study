@@ -15,3 +15,4 @@ for i in range(2, N+1):
 print(dp[N][0])
 dp[N][1].reverse()
 print(*dp[N][1])
+

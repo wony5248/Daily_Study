@@ -10,3 +10,5 @@ for tc in range(T):
             print(1)
         else:
             print(0)
+
+

@@ -9,3 +9,4 @@ for i in range(len(block)):
     result += abs(minV - block[i])
 
 print(result)
+
