@@ -4,9 +4,8 @@ omok = [list(map(int, input().split())) for _ in range(19)]
 dx = [0, -1, -1, -1, 0, 1, 1, 1]
 dy = [-1, -1, 0, 1, 1, 1, 0, -1]
 result = []
-ansc = 0
-ansx = 0
-ansy = 0
+
+
 def solve(cnt, x, y, dir, col):
     cx = x
     cy = y
@@ -27,6 +26,8 @@ def solve(cnt, x, y, dir, col):
 
     if 0 <= nx < 19 and 0 <= ny < 19 and omok[nx][ny] == ccol:
         solve(ccnt+1, nx, ny, cdir, ccol)
+
+
 for i in range(19):
     for j in range(19):
         if omok[i][j] == 1:
@@ -49,11 +50,10 @@ for i in range(19):
                             0 <= px < 19 and 0 <= py < 19 and omok[px][py] != 2):
                         solve(1, i, j, d, 2)
 
-result.sort(key= lambda x: (x[2], x[1]))
+result.sort(key=lambda x: (x[2], x[1]))
 
 if result:
     print(result[0][0])
-    print(result[0][1], end=" ")
-    print(result[0][2])
+    print(result[0][1], result[0][2])
 else:
     print(0)
